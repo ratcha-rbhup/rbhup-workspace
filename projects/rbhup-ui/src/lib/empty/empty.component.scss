@@ -1,0 +1,35 @@
+@import '../styles/variables';
+
+.rb-empty {
+  box-sizing: border-box;
+  font-family: inherit;
+
+  &-image {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+
+    .rb-empty-svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &-title {
+    color: var(--text-main, var(--rb-slate-800));
+  }
+
+  &-description {
+    color: var(--text-muted, var(--rb-slate-500));
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+}

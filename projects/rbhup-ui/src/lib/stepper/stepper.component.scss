@@ -1,0 +1,41 @@
+@import '../styles/variables';
+
+.rb-stepper {
+  gap: 8px;
+}
+
+.rb-step-item {
+  &:not(.last) {
+    flex-grow: 1;
+  }
+}
+
+.rb-step-circle {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 14px;
+  flex-shrink: 0;
+
+  &.active {
+    border-color: var(--primary);
+    background-color: var(--primary-lightest);
+    color: var(--primary);
+  }
+
+  &.completed {
+    border-color: var(--success);
+    background-color: var(--success);
+    color: var(--rb-white);
+  }
+}
+
+.rb-step-line {
+  height: 2px;
+  background-color: var(--border-color);
+  &.completed {
+    background-color: var(--success);
+  }
+}

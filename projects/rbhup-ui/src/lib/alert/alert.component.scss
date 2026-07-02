@@ -1,0 +1,11 @@
+@import '../styles/variables';
+
+.rb-alert {
+  &.rb-alert-success { background-color: var(--success-light); border-color: var(--success); color: var(--success); }
+  &.rb-alert-danger  { background-color: var(--danger-light);  border-color: var(--danger);  color: var(--danger);  }
+  &.rb-alert-warning { background-color: var(--warning-light); border-color: var(--warning); color: var(--warning); }
+  &.rb-alert-info    { background-color: var(--info-light);    border-color: var(--info);    color: var(--info);    }
+  p { color: var(--text-main); }
+  &-icon { font-size: 16px; }
+  &-close:hover { opacity: 1 !important; }
+}

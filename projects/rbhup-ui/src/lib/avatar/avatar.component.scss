@@ -1,0 +1,83 @@
+@import '../styles/variables';
+
+.rb-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: 600;
+  vertical-align: middle;
+  background-color: var(--rb-slate-100);
+  color: var(--rb-slate-700);
+  overflow: hidden;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+
+  // Shapes
+  &.rb-avatar-circle {
+    border-radius: 50%;
+  }
+  &.rb-avatar-square {
+    border-radius: 8px;
+  }
+
+  // Sizes
+  &.rb-avatar-sm {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  &.rb-avatar-md {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+  &.rb-avatar-lg {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  &.rb-avatar-xl {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+  }
+
+  // Image styling
+  .rb-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // Fallback svg
+  .rb-avatar-fallback-icon {
+    width: 50%;
+    height: 50%;
+    opacity: 0.65;
+  }
+
+  // Avatar group item
+  &.rb-avatar-group-item {
+    border-color: var(--bg-card, #ffffff);
+    &:not(:first-child) {
+      margin-left: -12px;
+    }
+    &:hover {
+      transform: translateY(-2px);
+      z-index: 10;
+      box-shadow: var(--shadow-sm);
+    }
+  }
+}
+
+// Avatar Group Container Helper
+.rb-avatar-group {
+  display: inline-flex;
+  align-items: center;
+  direction: ltr;
+}

@@ -1,0 +1,29 @@
+@import '../styles/variables';
+
+.rb-table-container {
+  border-color: var(--border-color);
+}
+
+.rb-table {
+  border-spacing: 0;
+
+  th {
+    background-color: var(--bg-app-base);
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+  }
+
+  td {
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr.hover-bg:hover {
+    background-color: var(--bg-light-gray);
+  }
+}

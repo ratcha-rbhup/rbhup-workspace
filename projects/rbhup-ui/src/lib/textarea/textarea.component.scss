@@ -1,0 +1,13 @@
+@import '../styles/variables';
+
+.rb-textarea {
+  background-color: var(--bg-card-element);
+  color: var(--text-main);
+  border-color: var(--border-color);
+  resize: vertical;
+  outline: none;
+  line-height: 1.6;
+  &:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+  &:disabled { background-color: var(--bg-light-gray); color: var(--text-light-grey); cursor: not-allowed; }
+  &.rb-textarea-error { border-color: var(--danger); &:focus { box-shadow: 0 0 0 3px var(--danger-light); } }
+}

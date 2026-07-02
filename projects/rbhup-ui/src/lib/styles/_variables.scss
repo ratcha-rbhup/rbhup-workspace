@@ -1,8 +1,568 @@
+// ==========================================
+// RBHUP UI - Premium Design System Variables
+// ==========================================
+
 :root {
-  --primary-color: #dc2626;
-  --primary-hover: #b91c1c;
-  --surface-color: #ffffff;
-  --text-color: #1a1a1a;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
+  // 1. Primitive Colors (Modern curated palette, fully shaded from 50 to 950)
+  
+  // Slate (Neutral / Cool Grays)
+  --rb-slate-50: #f8fafc;
+  --rb-slate-100: #f1f5f9;
+  --rb-slate-200: #e2e8f0;
+  --rb-slate-300: #cbd5e1;
+  --rb-slate-400: #94a3b8;
+  --rb-slate-500: #64748b;
+  --rb-slate-600: #475569;
+  --rb-slate-700: #334155;
+  --rb-slate-800: #1e293b;
+  --rb-slate-900: #0f172a;
+  --rb-slate-950: #020617;
+
+  // Blue (Bright Neon Royal Blue)
+  --rb-blue-50: #eff6ff;
+  --rb-blue-100: #dbeafe;
+  --rb-blue-200: #bfdbfe;
+  --rb-blue-300: #93c5fd;
+  --rb-blue-400: #60a5fa;
+  --rb-blue-500: #3b82f6;
+  --rb-blue-600: #2563eb;
+  --rb-blue-700: #1d4ed8;
+  --rb-blue-800: #1e40af;
+  --rb-blue-900: #1e3a8a;
+  --rb-blue-950: #172554;
+
+  // Sky Blue
+  --rb-sky-50: #f0f9ff;
+  --rb-sky-100: #e0f2fe;
+  --rb-sky-200: #bae6fd;
+  --rb-sky-300: #7dd3fc;
+  --rb-sky-400: #38bdf8;
+  --rb-sky-500: #0ea5e9;
+  --rb-sky-600: #0284c7;
+  --rb-sky-700: #0369a1;
+  --rb-sky-800: #075985;
+  --rb-sky-900: #0c4a6e;
+  --rb-sky-950: #082f49;
+
+  // Indigo
+  --rb-indigo-50: #eef2ff;
+  --rb-indigo-100: #e0e7ff;
+  --rb-indigo-200: #c7d2fe;
+  --rb-indigo-300: #a5b4fc;
+  --rb-indigo-400: #818cf8;
+  --rb-indigo-500: #6366f1;
+  --rb-indigo-600: #4f46e5;
+  --rb-indigo-700: #4338ca;
+  --rb-indigo-800: #3730a3;
+  --rb-indigo-900: #312e81;
+  --rb-indigo-950: #1e1b4b;
+
+  // Green / Emerald (Success)
+  --rb-green-50: #ecfdf5;
+  --rb-green-100: #d1fae5;
+  --rb-green-200: #a7f3d0;
+  --rb-green-300: #6ee7b7;
+  --rb-green-400: #34d399;
+  --rb-green-500: #10b981;
+  --rb-green-600: #059669;
+  --rb-green-700: #047857;
+  --rb-green-800: #065f46;
+  --rb-green-900: #064e3b;
+  --rb-green-950: #022c22;
+
+  // Lime (Super Trendy Neon Green)
+  --rb-lime-50: #f7fee7;
+  --rb-lime-100: #ecfccb;
+  --rb-lime-200: #d9f99d;
+  --rb-lime-300: #bef264;
+  --rb-lime-400: #a3e635;
+  --rb-lime-500: #84cc16;
+  --rb-lime-600: #65a30d;
+  --rb-lime-700: #4d7c0f;
+  --rb-lime-800: #3f6212;
+  --rb-lime-900: #365314;
+  --rb-lime-950: #1a2e05;
+
+  // Red (Vibrant Coral/Crimson)
+  --rb-red-50: #fef2f2;
+  --rb-red-100: #fee2e2;
+  --rb-red-200: #fecaca;
+  --rb-red-300: #fca5a5;
+  --rb-red-400: #f87171;
+  --rb-red-500: #ef4444;
+  --rb-red-600: #dc2626;
+  --rb-red-700: #b91c1c;
+  --rb-red-800: #991b1b;
+  --rb-red-900: #7f1d1d;
+  --rb-red-950: #450a0a;
+
+  // Orange (Cyber Warm Orange)
+  --rb-orange-50: #fff7ed;
+  --rb-orange-100: #ffedd5;
+  --rb-orange-200: #fed7aa;
+  --rb-orange-300: #fdba74;
+  --rb-orange-400: #fb923c;
+  --rb-orange-500: #f97316;
+  --rb-orange-600: #ea580c;
+  --rb-orange-700: #c2410c;
+  --rb-orange-800: #9a3412;
+  --rb-orange-900: #7c2d12;
+  --rb-orange-950: #431407;
+
+  // Som Theme Palette
+  --rb-som-50: #fff5f2;
+  --rb-som-100: #ffccbc;
+  --rb-som-200: #ffb09c;
+  --rb-som-300: #ff8a65;
+  --rb-som-400: #ff7b52;
+  --rb-som-500: #ff7043;
+  --rb-som-600: #f4511e;
+  --rb-som-700: #e64a19;
+  --rb-som-800: #d84315;
+  --rb-som-900: #cf3a00;
+  --rb-som-950: #bf360c;
+
+
+  // Amber / Yellow
+  --rb-amber-50: #fffbeb;
+  --rb-amber-100: #fef3c7;
+  --rb-amber-200: #fde68a;
+  --rb-amber-300: #fcd34d;
+  --rb-amber-400: #fbbf24;
+  --rb-amber-500: #f59e0b;
+  --rb-amber-600: #d97706;
+  --rb-amber-700: #b45309;
+  --rb-amber-800: #92400e;
+  --rb-amber-900: #78350f;
+  --rb-amber-950: #451a03;
+
+  // Yellow
+  --rb-yellow-50: #fefce8;
+  --rb-yellow-100: #fef9c3;
+  --rb-yellow-200: #fef08a;
+  --rb-yellow-300: #fde047;
+  --rb-yellow-400: #facc15;
+  --rb-yellow-500: #eab308;
+  --rb-yellow-600: #ca8a04;
+  --rb-yellow-700: #a16207;
+  --rb-yellow-800: #854d0e;
+  --rb-yellow-900: #713f12;
+  --rb-yellow-950: #422006;
+
+  // Purple / Violet (Creative/Premium)
+  --rb-purple-50: #f5f3ff;
+  --rb-purple-100: #ede9fe;
+  --rb-purple-200: #ddd6fe;
+  --rb-purple-300: #c4b5fd;
+  --rb-purple-400: #a78bfa;
+  --rb-purple-500: #8b5cf6;
+  --rb-purple-600: #7c3aed;
+  --rb-purple-700: #6d28d9;
+  --rb-purple-800: #5b21b6;
+  --rb-purple-900: #4c1d95;
+  --rb-purple-950: #2e1065;
+
+  // Fuchsia
+  --rb-fuchsia-50: #fdf4ff;
+  --rb-fuchsia-100: #fae8ff;
+  --rb-fuchsia-200: #f5d0fe;
+  --rb-fuchsia-300: #f0abfc;
+  --rb-fuchsia-400: #e879f9;
+  --rb-fuchsia-500: #d946ef;
+  --rb-fuchsia-600: #c084fc;
+  --rb-fuchsia-700: #a21caf;
+  --rb-fuchsia-800: #86198f;
+  --rb-fuchsia-900: #701a75;
+  --rb-fuchsia-950: #4a044e;
+
+  // Cyan / Teal
+  --rb-cyan-50: #ecfeff;
+  --rb-cyan-100: #cffafe;
+  --rb-cyan-200: #a5f3fc;
+  --rb-cyan-300: #67e8f9;
+  --rb-cyan-400: #22d3ee;
+  --rb-cyan-500: #06b6d4;
+  --rb-cyan-600: #0891b2;
+  --rb-cyan-700: #0e7490;
+  --rb-cyan-800: #155e75;
+  --rb-cyan-900: #164e63;
+  --rb-cyan-950: #083344;
+
+  // Teal
+  --rb-teal-50: #f0fdfa;
+  --rb-teal-100: #ccfbf1;
+  --rb-teal-200: #99f6e4;
+  --rb-teal-300: #5eead4;
+  --rb-teal-400: #2dd4bf;
+  --rb-teal-500: #14b8a6;
+  --rb-teal-600: #0d9488;
+  --rb-teal-700: #0f766e;
+  --rb-teal-800: #115e59;
+  --rb-teal-900: #134e4a;
+  --rb-teal-950: #042f2e;
+
+  // Pink / Rose
+  --rb-rose-50: #fff1f2;
+  --rb-rose-100: #ffe4e6;
+  --rb-rose-200: #fecdd3;
+  --rb-rose-300: #fda4af;
+  --rb-rose-400: #fb7185;
+  --rb-rose-500: #f43f5e;
+  --rb-rose-600: #e11d48;
+  --rb-rose-700: #be123c;
+  --rb-rose-800: #9f1239;
+  --rb-rose-900: #881337;
+  --rb-rose-950: #4c0519;
+
+  // Base Whites & Blacks
+  --rb-white: #ffffff;
+  --rb-black: #000000;
+
+  // 2. THEME COLORS - Default Premium Dark Blue Theme (ฟ้าเข้ม)
+  --primary: var(--rb-blue-800);
+  --primary-hover: var(--rb-blue-700);
+  --primary-active: var(--rb-blue-900);
+  --primary-light: var(--rb-blue-200);
+  --primary-lightest: var(--rb-blue-50);
+  --primary-dark: var(--rb-blue-900);
+  --primary-darker: var(--rb-blue-950);
+
+  // Backward compatibility with legacy styles
+  --rb-color-primary: var(--primary);
+  --rb-color-primary-hover: var(--primary-hover);
+  --rb-color-primary-light: var(--primary-light);
+  --rb-color-primary-bg: var(--primary-lightest);
+  --rb-color-accent: var(--rb-purple-600);
+  --rb-color-accent-light: var(--rb-purple-100);
+
+  // 3. SEMANTIC COLORS (สีตามสถานะการใช้งาน)
+  --success: var(--rb-green-500);
+  --success-light: var(--rb-green-100);
+  --success-hover: var(--rb-green-600);
+  --danger: var(--rb-red-600);
+  --danger-light: var(--rb-red-100);
+  --danger-hover: var(--rb-red-700);
+  --warning: var(--rb-orange-500);
+  --warning-light: var(--rb-orange-100);
+  --warning-hover: var(--rb-orange-600);
+  --info: var(--rb-teal-500);
+  --info-light: var(--rb-teal-100);
+  --info-hover: var(--rb-teal-600);
+
+  // Aliases for component consistency
+  --rb-color-success: var(--success);
+  --rb-color-success-bg: var(--success-light);
+  --rb-color-error: var(--danger);
+  --rb-color-error-bg: var(--danger-light);
+  --rb-color-warning: var(--warning);
+  --rb-color-warning-bg: var(--warning-light);
+  --rb-color-info: var(--info);
+  --rb-color-info-bg: var(--info-light);
+
+  // 4. NEUTRAL / LAYOUT COLORS
+  --bg-main: var(--rb-white);
+  --bg-app-base: var(--rb-slate-50);
+  --bg-content-area: var(--rb-slate-50);
+  --bg-card: var(--rb-white);
+  --bg-card-element: var(--rb-white);
+  --bg-light-gray: var(--rb-slate-100);
+  
+  --rb-color-bg-page: var(--bg-app-base);
+  --rb-color-bg-surface: var(--bg-card);
+  --rb-color-border: var(--rb-slate-200);
+  --border-color: var(--rb-slate-200);
+  --border-white: var(--rb-white);
+
+  // Text Colors
+  --text-main: var(--rb-slate-800);
+  --text-primary: var(--rb-slate-900);
+  --text-white: var(--rb-white);
+  --text-dark: var(--rb-slate-950);
+  --text-muted: var(--rb-slate-500);
+  --text-grey: var(--rb-slate-600);
+  --text-light-grey: var(--rb-slate-400);
+
+  --rb-color-text-primary: var(--text-primary);
+  --rb-color-text-secondary: var(--text-grey);
+  --rb-color-text-disabled: var(--text-light-grey);
+
+  // 5. SPACING & SIZES
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  --rb-radius-sm: var(--radius-xs);
+  --rb-radius-md: var(--radius-sm);
+  --rb-radius-lg: var(--radius-md);
+  --rb-radius-full: var(--radius-pill);
+
+  --rb-space-xs: 4px;
+  --rb-space-sm: 8px;
+  --rb-space-md: 16px;
+  --rb-space-lg: 24px;
+  --rb-space-xl: 32px;
+  --rb-space-xxl: 48px;
+
+  // 6. SHADOWS & ELEVATION
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-bottom-nav: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+
+  --rb-shadow-sm: var(--shadow-sm);
+  --rb-shadow-md: var(--shadow-md);
+  --rb-shadow-lg: var(--shadow-lg);
+  --rb-shadow-elevated: var(--shadow-xl);
+  --rb-shadow-bottom-nav: var(--shadow-bottom-nav);
+
+  // 7. EFFECTS (Transitions & Glassmorphic Blur)
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --rb-transition-fast: var(--transition-fast);
+  --rb-transition-smooth: var(--transition-normal);
+
+  --rb-glass-bg: rgba(255, 255, 255, 0.75);
+  --rb-glass-border: 1px solid rgba(255, 255, 255, 0.4);
+  --rb-glass-blur: blur(12px);
+
+  // 8. TYPOGRAPHY
+  --rb-font-family-base: 'Outfit', 'Inter', 'Noto Sans Thai', -apple-system, sans-serif;
+  --rb-font-size-xs: 12px;
+  --rb-font-size-sm: 14px;
+  --rb-font-size-base: 16px;
+  --rb-font-size-lg: 18px;
+  --rb-font-size-xl: 20px;
+  --rb-font-size-xxl: 24px;
+  --rb-font-size-3xl: 30px;
+  --rb-font-size-4xl: 36px;
+
+  // 9. COMPONENT SPECIFIC UX MEASUREMENTS
+  --rb-tap-target-min: 48px;
+  --rb-bottom-nav-height: 64px;
+  --rb-header-height: 72px;
+
+  // 10. Z-INDEX LAYERS (จัดวางลำดับชั้นอย่างมีระบบ)
+  --z-back: -1;
+  --z-base: 1;
+  --z-sticky: 10;
+  --z-bottom-nav: 500;
+  --z-bottom-nav-overlay: 501;
+  --z-drawer-overlay: 1000;
+  --z-drawer: 1010;
+  --z-drawer-dropdown: 1020;
+  --z-modal-overlay: 2000;
+  --z-modal: 2010;
+  --z-sheet-overlay: 3000;
+  --z-sheet: 3010;
+  --z-toast: 9000;
+  --z-loading: 99999;
+
+  --rb-z-base: var(--z-base);
+  --rb-z-nav: var(--z-bottom-nav);
+  --rb-z-sticky: var(--z-sticky);
+  --rb-z-modal-bg: var(--z-modal-overlay);
+  --rb-z-modal: var(--z-modal);
+  --rb-z-drawer-bg: var(--z-drawer-overlay);
+  --rb-z-drawer: var(--z-drawer);
+  --rb-z-popover: var(--z-drawer-dropdown);
+  --rb-z-toast: var(--z-toast);
+}
+
+// ==========================================
+// BRAND THEME CLASSES (สำหรับสลับโหมดสีหลัก)
+// ==========================================
+
+// Orange Theme
+:root.theme-orange {
+  --primary: var(--rb-orange-500);
+  --primary-hover: var(--rb-orange-600);
+  --primary-active: var(--rb-orange-700);
+  --primary-light: var(--rb-orange-200);
+  --primary-lightest: var(--rb-orange-50);
+  --primary-dark: var(--rb-orange-700);
+  --primary-darker: var(--rb-orange-950);
+}
+
+// Som Theme
+:root.theme-som {
+  --primary: var(--rb-som-500);
+  --primary-hover: var(--rb-som-400);
+  --primary-active: var(--rb-som-300);
+  --primary-light: var(--rb-som-100);
+  --primary-lightest: var(--rb-som-50);
+  --primary-dark: var(--rb-som-700);
+  --primary-darker: var(--rb-som-900);
+}
+
+
+// Green Theme
+:root.theme-green {
+  --primary: var(--rb-green-500);
+  --primary-hover: var(--rb-green-600);
+  --primary-active: var(--rb-green-700);
+  --primary-light: var(--rb-green-200);
+  --primary-lightest: var(--rb-green-50);
+  --primary-dark: var(--rb-green-700);
+  --primary-darker: var(--rb-green-800);
+}
+
+// Blue Theme (Light Blue / Sky Brand)
+:root.theme-blue {
+  --primary: var(--rb-blue-500);
+  --primary-hover: var(--rb-blue-600);
+  --primary-active: var(--rb-blue-700);
+  --primary-light: var(--rb-blue-200);
+  --primary-lightest: var(--rb-blue-50);
+  --primary-dark: var(--rb-blue-700);
+  --primary-darker: var(--rb-blue-800);
+}
+
+// Purple Theme (Luxury / Tech Brand)
+:root.theme-purple {
+  --primary: var(--rb-purple-600);
+  --primary-hover: var(--rb-purple-700);
+  --primary-active: var(--rb-purple-800);
+  --primary-light: var(--rb-purple-200);
+  --primary-lightest: var(--rb-purple-50);
+  --primary-dark: var(--rb-purple-800);
+  --primary-darker: var(--rb-purple-900);
+}
+
+// Sky Theme
+:root.theme-sky {
+  --primary: var(--rb-sky-500);
+  --primary-hover: var(--rb-sky-600);
+  --primary-active: var(--rb-sky-700);
+  --primary-light: var(--rb-sky-200);
+  --primary-lightest: var(--rb-sky-50);
+  --primary-dark: var(--rb-sky-700);
+  --primary-darker: var(--rb-sky-850);
+}
+
+// Indigo Theme
+:root.theme-indigo {
+  --primary: var(--rb-indigo-600);
+  --primary-hover: var(--rb-indigo-500);
+  --primary-active: var(--rb-indigo-700);
+  --primary-light: var(--rb-indigo-200);
+  --primary-lightest: var(--rb-indigo-50);
+  --primary-dark: var(--rb-indigo-800);
+  --primary-darker: var(--rb-indigo-900);
+}
+
+// Lime Theme
+:root.theme-lime {
+  --primary: var(--rb-lime-500);
+  --primary-hover: var(--rb-lime-600);
+  --primary-active: var(--rb-lime-700);
+  --primary-light: var(--rb-lime-200);
+  --primary-lightest: var(--rb-lime-50);
+  --primary-dark: var(--rb-lime-700);
+  --primary-darker: var(--rb-lime-850);
+}
+
+// Amber Theme
+:root.theme-amber {
+  --primary: var(--rb-amber-500);
+  --primary-hover: var(--rb-amber-600);
+  --primary-active: var(--rb-amber-700);
+  --primary-light: var(--rb-amber-200);
+  --primary-lightest: var(--rb-amber-50);
+  --primary-dark: var(--rb-amber-700);
+  --primary-darker: var(--rb-amber-850);
+}
+
+// Yellow Theme
+:root.theme-yellow {
+  --primary: var(--rb-yellow-500);
+  --primary-hover: var(--rb-yellow-600);
+  --primary-active: var(--rb-yellow-700);
+  --primary-light: var(--rb-yellow-200);
+  --primary-lightest: var(--rb-yellow-50);
+  --primary-dark: var(--rb-yellow-700);
+  --primary-darker: var(--rb-yellow-850);
+}
+
+// Fuchsia Theme
+:root.theme-fuchsia {
+  --primary: var(--rb-fuchsia-600);
+  --primary-hover: var(--rb-fuchsia-500);
+  --primary-active: var(--rb-fuchsia-700);
+  --primary-light: var(--rb-fuchsia-200);
+  --primary-lightest: var(--rb-fuchsia-50);
+  --primary-dark: var(--rb-fuchsia-800);
+  --primary-darker: var(--rb-fuchsia-900);
+}
+
+// Cyan Theme
+:root.theme-cyan {
+  --primary: var(--rb-cyan-500);
+  --primary-hover: var(--rb-cyan-600);
+  --primary-active: var(--rb-cyan-700);
+  --primary-light: var(--rb-cyan-200);
+  --primary-lightest: var(--rb-cyan-50);
+  --primary-dark: var(--rb-cyan-700);
+  --primary-darker: var(--rb-cyan-850);
+}
+
+// Teal Theme
+:root.theme-teal {
+  --primary: var(--rb-teal-500);
+  --primary-hover: var(--rb-teal-600);
+  --primary-active: var(--rb-teal-700);
+  --primary-light: var(--rb-teal-200);
+  --primary-lightest: var(--rb-teal-50);
+  --primary-dark: var(--rb-teal-700);
+  --primary-darker: var(--rb-teal-850);
+}
+
+// Rose Theme
+:root.theme-rose {
+  --primary: var(--rb-rose-500);
+  --primary-hover: var(--rb-rose-600);
+  --primary-active: var(--rb-rose-700);
+  --primary-light: var(--rb-rose-200);
+  --primary-lightest: var(--rb-rose-50);
+  --primary-dark: var(--rb-rose-700);
+  --primary-darker: var(--rb-rose-850);
+}
+
+// Slate Theme
+:root.theme-slate {
+  --primary: var(--rb-slate-700);
+  --primary-hover: var(--rb-slate-650);
+  --primary-active: var(--rb-slate-800);
+  --primary-light: var(--rb-slate-200);
+  --primary-lightest: var(--rb-slate-50);
+  --primary-dark: var(--rb-slate-800);
+  --primary-darker: var(--rb-slate-900);
+}
+
+
+// Dark Mode Theme (สลับสีพื้นหลังและสีอักษรสำหรับการใช้งานโหมดมืด)
+:root.theme-dark {
+  --bg-main: var(--rb-slate-950);
+  --bg-app-base: var(--rb-slate-900);
+  --bg-content-area: var(--rb-slate-900);
+  --bg-card: var(--rb-slate-800);
+  --bg-card-element: var(--rb-slate-850);
+  --bg-light-gray: var(--rb-slate-800);
+  
+  --border-color: var(--rb-slate-700);
+
+  --text-main: var(--rb-slate-200);
+  --text-primary: var(--rb-slate-100);
+  --text-white: var(--rb-white);
+  --text-dark: var(--rb-white);
+  --text-muted: var(--rb-slate-400);
+  --text-grey: var(--rb-slate-300);
+  --text-light-grey: var(--rb-slate-500);
+
+  --rb-glass-bg: rgba(15, 23, 42, 0.65);
+  --rb-glass-border: 1px solid rgba(255, 255, 255, 0.15);
 }

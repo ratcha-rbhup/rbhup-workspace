@@ -1,21 +1,21 @@
 @import '../styles/variables';
 
 .rb-btn {
-  background-color: var(--primary-color);
-  color: var(--surface-color);
-  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--rb-color-primary);
+  color: var(--rb-white);
+  padding: var(--rb-space-sm) var(--rb-space-md);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--rb-radius-sm);
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  transition: var(--rb-transition-smooth);
 }
 
 .rb-btn:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--rb-color-primary-hover);
 }
 
 .rb-btn:disabled {
-  background-color: #fca5a5;
+  background-color: var(--rb-color-primary-light);
   cursor: not-allowed;
 }

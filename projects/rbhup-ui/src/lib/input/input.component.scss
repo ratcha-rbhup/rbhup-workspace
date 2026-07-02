@@ -1,0 +1,34 @@
+@import '../styles/variables';
+
+.rb-input {
+  background-color: var(--bg-card-element);
+  color: var(--text-main);
+  border-color: var(--border-color);
+  outline: none;
+
+  &:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+  }
+
+  &:disabled {
+    background-color: var(--bg-light-gray);
+    color: var(--text-light-grey);
+    border-color: var(--border-color);
+    cursor: not-allowed;
+  }
+
+  &.rb-input-error {
+    border-color: var(--danger);
+    &:focus {
+      box-shadow: 0 0 0 3px var(--danger-light);
+    }
+  }
+
+  &.rb-input-success {
+    border-color: var(--success);
+    &:focus {
+      box-shadow: 0 0 0 3px var(--success-light);
+    }
+  }
+}

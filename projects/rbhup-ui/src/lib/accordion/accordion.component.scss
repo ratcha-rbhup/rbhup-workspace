@@ -1,0 +1,21 @@
+@import '../styles/variables';
+
+.rb-accordion {
+  border-color: var(--border-color);
+
+  &-header {
+    background-color: var(--bg-card-element);
+    &:hover { background-color: var(--bg-light-gray); }
+  }
+
+  &-icon {
+    font-size: 10px;
+    color: var(--text-muted);
+    &.rotated { transform: rotate(180deg); }
+  }
+
+  &-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+}

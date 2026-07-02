@@ -1,0 +1,136 @@
+@import '../styles/variables';
+
+.rb-timeline {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: inherit;
+
+  &-item {
+    position: relative;
+    padding-bottom: 24px;
+    margin: 0;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &-tail {
+      position: absolute;
+      top: 14px;
+      left: 6px;
+      height: calc(100% - 10px);
+      border-left: 2px solid var(--border-color, var(--rb-slate-200));
+    }
+
+    &-head {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-color: var(--bg-card, #ffffff);
+      border: 2px solid transparent;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      z-index: 1;
+
+      &.rb-timeline-item-head-primary {
+        border-color: var(--primary, var(--rb-blue-600));
+      }
+      &.rb-timeline-item-head-success {
+        border-color: var(--success, var(--rb-green-600));
+      }
+      &.rb-timeline-item-head-warning {
+        border-color: var(--warning, var(--rb-orange-500));
+      }
+      &.rb-timeline-item-head-danger {
+        border-color: var(--danger, var(--rb-red-600));
+      }
+      &.rb-timeline-item-head-info {
+        border-color: var(--info, var(--rb-sky-500));
+      }
+
+      &.rb-timeline-item-head-custom {
+        width: 24px;
+        height: 24px;
+        left: -5px;
+        top: -2px;
+        background-color: var(--bg-card, #ffffff);
+        font-size: 11px;
+        font-weight: bold;
+        border-width: 1px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      &-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-content {
+      position: relative;
+      top: -3px;
+      margin-left: 26px;
+    }
+  }
+
+  // Alternate Mode
+  &.rb-timeline-alternate {
+    .rb-timeline-item {
+      width: 50%;
+      margin-left: 0;
+
+      &-tail {
+        left: auto;
+        right: -1px;
+      }
+
+      &-head {
+        left: auto;
+        right: -7px;
+        
+        &.rb-timeline-item-head-custom {
+          right: -12px;
+          left: auto;
+        }
+      }
+
+      &-content {
+        margin-left: 0;
+        margin-right: 26px;
+        text-align: right;
+      }
+
+      // Odd/Right items
+      &.rb-timeline-item-right {
+        margin-left: 50%;
+        
+        .rb-timeline-item-tail {
+          left: -1px;
+          right: auto;
+        }
+
+        .rb-timeline-item-head {
+          left: -7px;
+          right: auto;
+
+          &.rb-timeline-item-head-custom {
+            left: -12px;
+            right: auto;
+          }
+        }
+
+        .rb-timeline-item-content {
+          margin-right: 0;
+          margin-left: 26px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

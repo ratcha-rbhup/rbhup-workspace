@@ -1,0 +1,223 @@
+@import '../styles/variables';
+
+// Mobile Top Bar Toggle
+.rb-sidebar-mobile-toggle {
+  display: none !important;
+  background-color: var(--bg-card, #ffffff);
+  border-bottom: 1px solid var(--border-color, var(--rb-slate-200));
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  position: sticky;
+  top: 0;
+
+  .menu-btn {
+    color: var(--text-main, var(--rb-slate-800));
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 4px;
+    &:hover {
+      background-color: var(--bg-light-gray);
+    }
+  }
+
+  .logo-title {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+// Sidebar Overlay for mobile screen blocking
+.rb-sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+}
+
+// Main Sidebar structure
+.rb-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-card, #ffffff);
+  border-right: 1px solid var(--border-color, var(--rb-slate-200));
+  box-sizing: border-box;
+  padding: 1.25rem;
+  z-index: 99;
+  font-family: inherit;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .rb-sidebar-close-mobile-btn {
+    display: none;
+    font-size: 18px;
+    color: var(--text-muted);
+    &:hover {
+      color: var(--text-main);
+    }
+  }
+
+  &-header {
+    padding-bottom: 1rem;
+    align-items: center;
+
+    .rb-sidebar-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .rb-sidebar-brand {
+      font-size: 18px;
+      color: var(--primary, var(--rb-blue-600));
+      letter-spacing: -0.5px;
+    }
+  }
+
+  // Search Bar Styling
+  &-search {
+    .search-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .search-icon {
+        position: absolute;
+        left: 10px;
+        color: var(--text-muted, var(--rb-slate-400));
+        pointer-events: none;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 8px 32px 8px 32px;
+        font-size: 13px;
+        border: 1px solid var(--border-color, var(--rb-slate-200));
+        background-color: var(--bg-card-element, var(--rb-slate-50));
+        color: var(--text-main, var(--rb-slate-800));
+        border-radius: 8px;
+        outline: none;
+        box-sizing: border-box;
+        transition: all 0.2s;
+
+        &:focus {
+          border-color: var(--primary, var(--rb-blue-500));
+          box-shadow: 0 0 0 3px var(--primary-light, rgba(59, 130, 246, 0.15));
+          background-color: var(--bg-card, #ffffff);
+        }
+      }
+
+      .clear-search-btn {
+        position: absolute;
+        right: 10px;
+        color: var(--text-muted);
+        font-size: 11px;
+        &:hover {
+          color: var(--text-main);
+        }
+      }
+    }
+  }
+
+  // Nav Items Styling
+  &-nav {
+    flex: 1;
+    overflow-y: auto;
+    
+    .rb-sidebar-item-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--text-muted, var(--rb-slate-600));
+      font-size: 14px;
+      font-weight: 550;
+      transition: all 0.15s ease;
+      text-align: left;
+      box-sizing: border-box;
+
+      .rb-sidebar-item-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+
+      .rb-sidebar-item-label {
+        font-family: inherit;
+      }
+
+      &:hover {
+        background-color: var(--bg-light-gray, var(--rb-slate-50));
+        color: var(--text-main, var(--rb-slate-800));
+      }
+
+      &.active {
+        background-color: var(--primary-lightest, rgba(59, 130, 246, 0.1));
+        color: var(--primary, var(--rb-blue-600));
+        font-weight: 600;
+      }
+
+      // Badges inside sidebar
+      .rb-sidebar-item-badge {
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 1;
+
+        &-primary { background-color: var(--primary, var(--rb-blue-600)); color: white; }
+        &-success { background-color: var(--success, var(--rb-green-600)); color: white; }
+        &-warning { background-color: var(--warning, var(--rb-orange-500)); color: white; }
+        &-danger  { background-color: var(--danger, var(--rb-red-600)); color: white; }
+        &-info    { background-color: var(--info, var(--rb-sky-500)); color: white; }
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+// Media Queries for Mobile Responsive drawer layout
+@media (max-width: 991px) {
+  .rb-sidebar-mobile-toggle {
+    display: flex !important;
+  }
+
+  .rb-sidebar-overlay {
+    display: block;
+  }
+
+  .rb-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+
+    &.rb-sidebar-mobile-open {
+      transform: translateX(0);
+    }
+
+    .rb-sidebar-close-mobile-btn {
+      display: block;
+    }
+  }
+}

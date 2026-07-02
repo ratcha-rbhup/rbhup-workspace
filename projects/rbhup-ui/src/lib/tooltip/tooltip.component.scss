@@ -1,0 +1,60 @@
+@import '../styles/variables';
+
+.rb-tooltip-container {
+  display: inline-block;
+}
+
+.rb-tooltip {
+  background-color: var(--rb-slate-900);
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: var(--rb-font-family-base);
+  opacity: 0.95;
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+  }
+
+  &.rb-tooltip-top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    &::after {
+      top: 100%; left: 50%; transform: translateX(-50%);
+      border-color: var(--rb-slate-900) transparent transparent transparent;
+    }
+  }
+
+  &.rb-tooltip-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    &::after {
+      bottom: 100%; left: 50%; transform: translateX(-50%);
+      border-color: transparent transparent var(--rb-slate-900) transparent;
+    }
+  }
+
+  &.rb-tooltip-left {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+    &::after {
+      left: 100%; top: 50%; transform: translateY(-50%);
+      border-color: transparent transparent transparent var(--rb-slate-900);
+    }
+  }
+
+  &.rb-tooltip-right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    &::after {
+      right: 100%; top: 50%; transform: translateY(-50%);
+      border-color: transparent var(--rb-slate-900) transparent transparent;
+    }
+  }
+}

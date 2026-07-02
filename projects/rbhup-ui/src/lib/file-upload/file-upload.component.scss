@@ -1,0 +1,22 @@
+@import '../styles/variables';
+
+.rb-upload-area {
+  border-width: 2px;
+  border-color: var(--border-color);
+  background-color: var(--bg-card-element);
+  &:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-lightest);
+  }
+  &.dragover {
+    border-color: var(--success);
+    background-color: var(--success-light);
+  }
+}
+
+.file-item {
+  border-color: var(--border-color);
+  .remove-btn:hover {
+    color: var(--danger) !important;
+  }
+}

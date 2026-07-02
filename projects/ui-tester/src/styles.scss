@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+// Import all design tokens and utility classes from rbhup-ui
+@import '../../rbhup-ui/src/lib/styles/variables';
+@import '../../rbhup-ui/src/lib/styles/utilities';
+
+// Global resets
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--rb-font-family-base);
+  font-size: var(--rb-font-size-base);
+  background-color: var(--bg-app-base);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}

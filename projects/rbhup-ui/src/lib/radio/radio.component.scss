@@ -1,0 +1,11 @@
+@import '../styles/variables';
+.rb-radio {
+  &.disabled { cursor: not-allowed; opacity: 0.6; }
+  &-circle {
+    width: 18px; height: 18px; flex-shrink: 0;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-card-element);
+    &.selected { border-color: var(--primary); }
+  }
+  &-dot { width: 8px; height: 8px; background-color: var(--primary); }
+}

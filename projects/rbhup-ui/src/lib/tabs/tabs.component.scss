@@ -1,0 +1,14 @@
+@import '../styles/variables';
+
+.rb-tabs-nav { gap: 0; }
+
+.rb-tab-btn {
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent !important;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  padding-bottom: 10px;
+
+  &:hover { color: var(--text-main); background-color: var(--bg-light-gray); }
+  &.active { color: var(--primary); border-bottom-color: var(--primary) !important; }
+}

@@ -1,0 +1,23 @@
+@import '../styles/variables';
+
+.rb-toggle {
+  &.disabled { cursor: not-allowed; opacity: 0.6; }
+
+  &-track {
+    width: 44px;
+    height: 24px;
+    background-color: var(--bg-light-gray);
+    border: 1px solid var(--border-color);
+    &.active { background-color: var(--primary); border-color: var(--primary); }
+    &.disabled { background-color: var(--bg-light-gray); }
+  }
+
+  &-thumb {
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--rb-white);
+    &.active { left: 22px; }
+  }
+}

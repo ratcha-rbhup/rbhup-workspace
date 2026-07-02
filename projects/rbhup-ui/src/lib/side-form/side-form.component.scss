@@ -1,0 +1,35 @@
+@import '../styles/variables';
+
+.rb-side-form-overlay {
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+.rb-side-form {
+  background-color: var(--bg-card);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Mode: Slide-in from right
+  &.rb-side-form-right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 480px;
+    max-width: 95vw;
+    transform: translateX(100%);
+    box-shadow: var(--shadow-modal);
+    &.visible { transform: translateX(0); }
+  }
+
+  // Mode: Slide-up from bottom (sheet)
+  &.rb-side-form-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 92vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    transform: translateY(100%);
+    box-shadow: var(--shadow-modal);
+    &.visible { transform: translateY(0); }
+  }
+}

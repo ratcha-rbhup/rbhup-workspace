@@ -1,0 +1,11 @@
+@import '../styles/variables';
+
+.rb-card-form {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+
+  &-header { background-color: var(--bg-app-base); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+  &-footer { background-color: var(--bg-app-base); border-radius: 0 0 var(--radius-md) var(--radius-md); }
+}

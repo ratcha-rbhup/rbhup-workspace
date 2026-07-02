@@ -1,0 +1,11 @@
+@import '../styles/variables';
+
+.rb-progress-track { background-color: var(--bg-light-gray); }
+.rb-progress-bar {
+  height: 100%;
+  &.rb-progress-primary { background-color: var(--primary); }
+  &.rb-progress-success { background-color: var(--success); }
+  &.rb-progress-danger  { background-color: var(--danger);  }
+  &.rb-progress-warning { background-color: var(--warning); }
+  &.rb-progress-info    { background-color: var(--info);    }
+}

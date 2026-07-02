@@ -1,0 +1,33 @@
+@import '../styles/variables';
+
+.rb-dialog-overlay {
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.rb-dialog {
+  background-color: var(--bg-card);
+  max-height: 90vh;
+  max-width: 95vw;
+  animation-duration: 0.2s;
+
+  &.rb-dialog-sm { width: 400px; }
+  &.rb-dialog-md { width: 600px; }
+  &.rb-dialog-lg { width: 850px; }
+
+  .rb-dialog-close-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    border-radius: var(--radius-pill);
+
+    &:hover {
+      background-color: var(--bg-light-gray);
+      color: var(--text-dark);
+    }
+  }
+
+  .rb-dialog-body {
+    max-height: 60vh;
+  }
+}

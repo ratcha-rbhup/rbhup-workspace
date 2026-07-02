@@ -1,0 +1,27 @@
+@import '../styles/variables';
+
+.rb-drawer-overlay {
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+.rb-drawer {
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 95vw;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--bg-card);
+
+  &.rb-drawer-right {
+    right: 0;
+    transform: translateX(100%);
+    &.visible { transform: translateX(0); }
+  }
+
+  &.rb-drawer-left {
+    left: 0;
+    transform: translateX(-100%);
+    &.visible { transform: translateX(0); }
+  }
+}

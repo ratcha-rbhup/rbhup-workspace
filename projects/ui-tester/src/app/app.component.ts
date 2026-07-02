@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from 'rbhup-ui';
+import { StorybookComponent } from 'rbhup-ui';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ButtonComponent],
-  template: `
-    <div style="padding: 20px;">
-      <rb-button>Submit</rb-button>
-    </div>
-  `,
+  imports: [StorybookComponent],
+  template: `<lib-storybook></lib-storybook>`,
 })
-export class AppComponent {}
+export class AppComponent { }

@@ -1,0 +1,12 @@
+@import '../styles/variables';
+
+.rb-metric-card {
+  border-color: var(--border-color);
+}
+
+.rb-metric-icon {
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-light-gray);
+  color: var(--text-muted);
+}
