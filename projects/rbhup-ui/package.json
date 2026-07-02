@@ -1,6 +1,13 @@
 {
-  "name": "rbhup-ui",
+  "name": "@ratcha-rbhup/rbhup-ui",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ratcha-rbhup/rbhup-workspace.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "peerDependencies": {
     "@angular/common": "^21.2.0",
     "@angular/core": "^21.2.0"
