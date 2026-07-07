@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-tooltip-container d-inline-block pos-relative"
+    <div class="rb-tooltip-container inline-block relative"
       (mouseenter)="show()"
       (mouseleave)="hide()">
       <ng-content></ng-content>
       <div *ngIf="visible"
-        class="rb-tooltip pos-absolute px-2 py-1 text-xs text-white rounded-xs transition-fast shadow-md z-toast"
+        class="rb-tooltip absolute px-2 py-1 text-xs text-white rounded-xs transition-fast shadow-md z-toast"
         [class]="'rb-tooltip-' + position">
         {{ text }}
       </div>

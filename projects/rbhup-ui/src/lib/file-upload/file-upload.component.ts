@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="rb-file-upload w-full">
-      <label *ngIf="label" class="text-xs font-semibold text-muted select-none d-block mb-1">{{ label }}</label>
+      <label *ngIf="label" class="text-xs font-semibold text-muted select-none block mb-1">{{ label }}</label>
       
       <!-- Drop Area -->
       <div class="rb-upload-area border-dashed rounded-sm p-6 text-center cursor-pointer transition-fast"
@@ -17,17 +17,17 @@ import { CommonModule } from '@angular/common';
         (drop)="onDrop($event)"
         (click)="fileInput.click()">
         
-        <input type="file" #fileInput class="d-none" [multiple]="multiple" (change)="onFileSelect($event)">
-        <span class="upload-icon d-block text-2xl mb-2 text-muted">📤</span>
+        <input type="file" #fileInput class="hidden" [multiple]="multiple" (change)="onFileSelect($event)">
+        <i class="fa-solid fa-cloud-arrow-up text-2xl mb-2 text-muted block"></i>
         <p class="text-sm font-semibold m-0 text-main">{{ dragLabel }}</p>
         <p class="text-xs text-muted m-0 mt-1">Supported formats: {{ accept || 'All files' }}</p>
       </div>
 
       <!-- File List -->
-      <div *ngIf="files.length > 0" class="file-list mt-3 d-flex flex-col gap-2">
-        <div *ngFor="let file of files; let idx = index" class="file-item d-flex align-center justify-between p-2 border rounded-xs bg-card text-xs">
-          <div class="d-flex align-center gap-2 overflow-hidden">
-            <span class="file-icon">📄</span>
+      <div *ngIf="files.length > 0" class="file-list mt-3 flex flex-col gap-2">
+        <div *ngFor="let file of files; let idx = index" class="file-item flex items-center justify-between p-2 border rounded-xs bg-card text-xs">
+          <div class="flex items-center gap-2 overflow-hidden">
+            <i class="fa-solid fa-file-lines text-muted"></i>
             <span class="file-name font-semibold text-main truncate" style="max-width: 240px;">{{ file.name }}</span>
             <span class="file-size text-muted">({{ formatBytes(file.size) }})</span>
           </div>

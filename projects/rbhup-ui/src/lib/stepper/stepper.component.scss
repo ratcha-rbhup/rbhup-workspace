@@ -1,15 +1,184 @@
 @import '../styles/variables';
 
 .rb-stepper {
-  gap: 8px;
+  width: 100%;
 }
 
-.rb-step-item {
-  &:not(.last) {
-    flex-grow: 1;
+// 1. Horizontal Default Stepper
+.rb-stepper-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .rb-step-item {
+    display: flex;
+    align-items: center;
+    
+    &:not(.last) {
+      flex-grow: 1;
+    }
+  }
+
+  .rb-step-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
 }
 
+// 2. Centered & Timeline Steppers (Connecting middle line)
+.rb-stepper-centered, .rb-stepper-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  padding-bottom: 8px;
+
+  .rb-stepper-progress-line-track {
+    position: absolute;
+    top: 16px; // Center of the 32px circle
+    left: 40px; // Offset from left side to center of first node
+    right: 40px; // Offset from right side to center of last node
+    height: 3px;
+    background-color: var(--border-color);
+    z-index: 1;
+    border-radius: var(--radius-pill);
+  }
+
+  .rb-stepper-progress-line-fill {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: var(--radius-pill);
+  }
+
+  .rb-step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+  }
+
+  .rb-step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rb-step-content {
+    margin-top: 10px;
+    padding: 0 8px;
+    
+    .justify-center-centered {
+      justify-content: center;
+    }
+    
+    .rb-step-description {
+      margin-top: 4px;
+      max-width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// Timeline Process (Horizontal)
+.rb-stepper-timeline {
+  // Styles specific to timeline process
+  .rb-stepper-progress-line-fill {
+    background-color: var(--primary);
+  }
+  
+  // Custom status color rings/accents
+  .rb-step-item {
+    &.rb-step-success {
+      .rb-step-circle.completed, .rb-step-circle.active {
+        border-color: var(--success);
+        background-color: var(--success-light);
+        color: var(--success);
+      }
+      .rb-step-title {
+        color: var(--success);
+      }
+    }
+    &.rb-step-danger {
+      .rb-step-circle.completed, .rb-step-circle.active {
+        border-color: var(--danger);
+        background-color: var(--danger-light);
+        color: var(--danger);
+      }
+      .rb-step-title {
+        color: var(--danger);
+      }
+    }
+    &.rb-step-warning {
+      .rb-step-circle.completed, .rb-step-circle.active {
+        border-color: var(--warning);
+        background-color: var(--warning-light);
+        color: var(--warning);
+      }
+      .rb-step-title {
+        color: var(--warning);
+      }
+    }
+    &.rb-step-info {
+      .rb-step-circle.completed, .rb-step-circle.active {
+        border-color: var(--info);
+        background-color: var(--info-light);
+        color: var(--info);
+      }
+      .rb-step-title {
+        color: var(--info);
+      }
+    }
+  }
+}
+
+// 3. Vertical Stepper
+.rb-stepper-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  padding-left: 8px;
+
+  .rb-step-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rb-step-container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .rb-step-vertical-line {
+    position: absolute;
+    left: 16px; // Center of the 32px circle
+    top: 32px;
+    bottom: -28px; // Connects to the next item
+    width: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+
+    &.completed {
+      background-color: var(--success);
+    }
+  }
+
+  .rb-step-circle {
+    z-index: 2;
+  }
+
+  .rb-step-content {
+    padding-top: 4px;
+  }
+}
+
+// Common Step Item Elements
 .rb-step-circle {
   width: 32px;
   height: 32px;
@@ -37,5 +206,84 @@
   background-color: var(--border-color);
   &.completed {
     background-color: var(--success);
+  }
+}
+
+// 4. Responsive Mobile Media Queries
+@media (max-width: 640px) {
+  .rb-stepper-horizontal, .rb-stepper-centered, .rb-stepper-timeline {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    padding-left: 8px;
+    position: relative;
+
+    .rb-stepper-progress-line-track {
+      display: none !important;
+    }
+
+    .rb-step-item {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      width: 100% !important;
+      position: relative;
+
+      &:not(.last)::after {
+        content: '';
+        position: absolute;
+        left: 16px;
+        top: 32px;
+        bottom: -28px;
+        width: 2px;
+        background-color: var(--border-color);
+        z-index: 1;
+      }
+
+      &.completed:not(.last)::after {
+        background-color: var(--success);
+      }
+    }
+
+    .rb-step-container {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+    }
+
+    .rb-step-circle {
+      z-index: 2;
+    }
+
+    .rb-step-content {
+      margin-top: 0 !important;
+      padding-top: 4px;
+      padding-left: 12px !important;
+      text-align: left !important;
+
+      .justify-center-centered {
+        justify-content: flex-start !important;
+      }
+
+      .rb-step-title {
+        text-align: left !important;
+      }
+
+      .rb-step-subtitle {
+        margin-left: 6px;
+      }
+
+      .rb-step-description {
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+      }
+    }
+
+    .rb-step-line {
+      display: none !important;
+    }
   }
 }

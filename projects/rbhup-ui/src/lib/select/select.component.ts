@@ -11,7 +11,7 @@ export interface SelectOption {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-select-wrapper flex-col d-flex gap-1 pos-relative">
+    <div class="rb-select-wrapper flex-col flex gap-1 relative">
       <label *ngIf="label" class="rb-select-label text-xs font-semibold text-muted select-none">
         {{ label }}
       </label>
@@ -20,7 +20,7 @@ export interface SelectOption {
       <div 
         [class.disabled]="disabled"
         (click)="toggleDropdown()"
-        class="rb-select-control d-flex align-center justify-between px-3 py-2 border rounded-sm cursor-pointer select-none transition-fast font-sans"
+        class="rb-select-control flex items-center justify-between px-3 py-2 border rounded-sm cursor-pointer select-none transition-fast font-sans"
         [class.open]="isOpen"
       >
         <span class="text-sm" [class.text-muted]="!selectedLabel">
@@ -30,7 +30,7 @@ export interface SelectOption {
       </div>
 
       <!-- Options Dropdown -->
-      <ul *ngIf="isOpen && !disabled" class="rb-select-dropdown pos-absolute w-full border rounded-sm shadow-md bg-card p-0 m-0 z-drawer overflow-y-auto animate-fade-in">
+      <ul *ngIf="isOpen && !disabled" class="rb-select-dropdown absolute w-full border rounded-sm shadow-md bg-card p-0 m-0 z-drawer overflow-y-auto animate-fade-in">
         <li 
           *ngFor="let option of options" 
           (click)="selectOption(option)"

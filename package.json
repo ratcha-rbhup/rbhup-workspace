@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng serve ui-tester --host 0.0.0.0",
+    "start:login": "ng serve ui-tester --port 4202",
+    "build": "ng build ui-tester",
+    "build:lib": "ng build rbhup-ui",
+    "watch": "ng build ui-tester --watch --configuration development",
+    "test": "ng test",
+    "postinstall": "echo 'Run npm start from D:\\rbhup-workspace only'"
   },
   "private": true,
   "packageManager": "npm@10.8.2",

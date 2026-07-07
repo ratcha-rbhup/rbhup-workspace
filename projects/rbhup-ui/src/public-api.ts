@@ -44,6 +44,7 @@ export * from './lib/avatar/avatar.component';
 export * from './lib/timeline/timeline.component';
 export * from './lib/empty/empty.component';
 export * from './lib/sidebar/sidebar.component';
+export * from './lib/login/login.component';
 
 
 

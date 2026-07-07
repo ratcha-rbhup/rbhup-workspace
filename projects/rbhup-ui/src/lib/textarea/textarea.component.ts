@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="d-flex flex-col gap-1">
+    <div class="flex flex-col gap-1">
       <label *ngIf="label" class="text-xs font-semibold text-muted select-none">{{ label }}</label>
       <textarea
         [placeholder]="placeholder"

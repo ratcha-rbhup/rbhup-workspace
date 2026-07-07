@@ -30,12 +30,15 @@ export interface TimelineItem {
           class="rb-timeline-item-head"
           [class]="item.type ? 'rb-timeline-item-head-' + item.type : 'rb-timeline-item-head-primary'"
           [class.rb-timeline-item-head-custom]="!!item.icon">
-          <span *ngIf="item.icon" class="rb-timeline-item-head-icon">{{ item.icon }}</span>
+          <span *ngIf="item.icon" class="rb-timeline-item-head-icon flex items-center justify-center">
+            <i *ngIf="isFontAwesome(item.icon); else textIcon" [class]="item.icon"></i>
+            <ng-template #textIcon>{{ item.icon }}</ng-template>
+          </span>
         </div>
         
         <!-- Content -->
         <div class="rb-timeline-item-content">
-          <div class="rb-timeline-item-header d-flex align-center justify-between flex-wrap gap-1">
+          <div class="rb-timeline-item-header flex items-center justify-between flex-wrap gap-1">
             <h4 class="rb-timeline-item-title m-0 text-sm font-semibold text-main">{{ item.title }}</h4>
             <span *ngIf="item.date" class="rb-timeline-item-date text-xs text-muted">{{ item.date }}</span>
           </div>
@@ -50,4 +53,8 @@ export interface TimelineItem {
 export class TimelineComponent {
   @Input() items: TimelineItem[] = [];
   @Input() mode: 'left' | 'alternate' = 'left';
+
+  isFontAwesome(icon: string): boolean {
+    return icon.includes('fa-');
+  }
 }

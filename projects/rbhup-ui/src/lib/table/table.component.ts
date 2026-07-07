@@ -14,7 +14,7 @@ export interface TableColumn {
   standalone: true,
   imports: [CommonModule, PaginatorComponent, SkeletonComponent],
   template: `
-    <div class="rb-table-container border rounded-sm overflow-hidden bg-card shadow-sm d-flex flex-col">
+    <div class="rb-table-container border rounded-sm overflow-hidden bg-card shadow-sm flex flex-col">
       <div class="overflow-x-auto w-full">
         <table class="rb-table w-full text-left border-collapse">
           <thead>
@@ -23,7 +23,7 @@ export interface TableColumn {
                 class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-muted select-none"
                 [class.cursor-pointer]="col.sortable"
                 (click)="col.sortable && sort(col.key)">
-                <div class="d-flex align-center gap-1">
+                <div class="flex items-center gap-1">
                   <span>{{ col.label }}</span>
                   <span *ngIf="col.sortable" class="text-xxs opacity-70">
                     {{ sortKey === col.key ? (sortOrder === 'asc' ? '▲' : '▼') : '↕' }}

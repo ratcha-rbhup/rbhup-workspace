@@ -11,9 +11,9 @@
   max-width: 95vw;
   animation-duration: 0.2s;
 
-  &.rb-dialog-sm { width: 400px; }
-  &.rb-dialog-md { width: 600px; }
-  &.rb-dialog-lg { width: 850px; }
+  &.rb-dialog-sm { width: 400px; max-width: calc(100vw - 32px); }
+  &.rb-dialog-md { width: 600px; max-width: calc(100vw - 32px); }
+  &.rb-dialog-lg { width: 850px; max-width: calc(100vw - 32px); }
 
   .rb-dialog-close-btn {
     width: 24px;

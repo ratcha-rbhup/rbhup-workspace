@@ -12,7 +12,8 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "paths": {
-      "rbhup-ui": ["./dist/rbhup-ui"]
+      "rbhup-ui": ["./dist/rbhup-ui"],
+      "@ratcha-rbhup/rbhup-ui": ["./dist/rbhup-ui"]
     },
     "importHelpers": true,
     "target": "ES2022",

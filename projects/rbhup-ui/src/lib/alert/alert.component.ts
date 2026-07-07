@@ -7,15 +7,15 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div *ngIf="visible" 
-      class="rb-alert d-flex align-center gap-3 px-4 py-3 rounded-sm border transition-normal animate-fade-in"
+      class="rb-alert flex items-center gap-3 px-4 py-3 rounded-sm border transition-normal animate-fade-in"
       [class]="'rb-alert-' + type">
-      <span class="rb-alert-icon font-bold text-base">
-        <span *ngIf="type === 'success'">✓</span>
-        <span *ngIf="type === 'danger'">✗</span>
-        <span *ngIf="type === 'warning'">!</span>
-        <span *ngIf="type === 'info'">ℹ</span>
+      <span class="rb-alert-icon font-bold text-base flex items-center justify-center">
+        <i *ngIf="type === 'success'" class="fa-solid fa-circle-check text-success"></i>
+        <i *ngIf="type === 'danger'" class="fa-solid fa-circle-xmark text-danger"></i>
+        <i *ngIf="type === 'warning'" class="fa-solid fa-triangle-exclamation text-warning"></i>
+        <i *ngIf="type === 'info'" class="fa-solid fa-circle-info text-info"></i>
       </span>
-      <div class="flex-grow-1">
+      <div class="grow">
         <p class="text-sm font-semibold m-0" *ngIf="title">{{ title }}</p>
         <p class="text-sm m-0" [class.mt-1]="title">{{ message }}</p>
       </div>

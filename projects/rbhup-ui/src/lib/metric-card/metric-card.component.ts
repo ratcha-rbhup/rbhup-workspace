@@ -6,19 +6,20 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-metric-card border rounded-sm p-4 bg-card shadow-sm d-flex justify-between align-center">
+    <div class="rb-metric-card border rounded-sm p-4 bg-card shadow-sm flex justify-between items-center">
       <div>
         <span class="text-xs font-semibold text-muted uppercase tracking-wider">{{ title }}</span>
         <h2 class="text-2xl font-bold text-main mt-1 mb-0">{{ value }}</h2>
-        <div *ngIf="change !== undefined" class="d-flex align-center gap-1 mt-2 text-xs font-semibold">
+        <div *ngIf="change !== undefined" class="flex items-center gap-1 mt-2 text-xs font-semibold">
           <span [class]="change >= 0 ? 'text-success' : 'text-danger'">
             {{ change >= 0 ? '▲' : '▼' }} {{ Math.abs(change) }}%
           </span>
           <span class="text-muted">vs last period</span>
         </div>
       </div>
-      <div *ngIf="icon" class="rb-metric-icon d-flex align-center justify-center rounded-sm text-lg font-bold">
-        {{ icon }}
+      <div *ngIf="icon" class="rb-metric-icon flex items-center justify-center rounded-sm text-lg font-bold">
+        <i *ngIf="isFontAwesome(icon); else textIcon" [class]="icon"></i>
+        <ng-template #textIcon>{{ icon }}</ng-template>
       </div>
     </div>
   `,
@@ -31,4 +32,8 @@ export class MetricCardComponent {
   @Input() icon = '';
 
   Math = Math;
+
+  isFontAwesome(icon: string): boolean {
+    return icon.includes('fa-');
+  }
 }

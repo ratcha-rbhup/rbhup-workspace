@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div *ngIf="visible" class="rb-overlay pos-fixed inset-0 d-flex flex-col align-center justify-center z-loading animate-fade-in">
+    <div *ngIf="visible" class="rb-overlay fixed inset-0 flex flex-col items-center justify-center z-loading animate-fade-in">
       <div class="spinner spinner-lg mb-3"></div>
       <p *ngIf="message" class="text-sm font-semibold text-white m-0">{{ message }}</p>
     </div>

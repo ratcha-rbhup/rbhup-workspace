@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <label class="rb-toggle d-inline-flex align-center gap-3 cursor-pointer select-none" [class.disabled]="disabled">
-      <div class="rb-toggle-track rounded-full pos-relative transition-fast"
+    <label class="rb-toggle inline-flex items-center gap-3 cursor-pointer select-none" [class.disabled]="disabled">
+      <div class="rb-toggle-track rounded-full relative transition-fast"
         [class.active]="checked"
         [class.disabled]="disabled"
         (click)="!disabled && toggle()">
-        <div class="rb-toggle-thumb pos-absolute rounded-full transition-fast shadow-sm" [class.active]="checked"></div>
+        <div class="rb-toggle-thumb absolute rounded-full transition-fast shadow-sm" [class.active]="checked"></div>
       </div>
       <span class="text-sm font-medium" [class.text-muted]="disabled">{{ label }}</span>
     </label>

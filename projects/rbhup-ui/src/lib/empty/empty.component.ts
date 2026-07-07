@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-empty py-8 px-6 text-center d-flex flex-column align-center justify-center">
+    <div class="rb-empty py-8 px-6 text-center flex flex-col items-center justify-center">
       <!-- Custom Premium SVG Icons -->
       <div class="rb-empty-image mb-4">
         <!-- 1. Box Icon (default empty) -->

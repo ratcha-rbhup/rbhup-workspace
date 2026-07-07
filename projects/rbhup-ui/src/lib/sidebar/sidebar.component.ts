@@ -16,8 +16,8 @@ export interface SidebarItem {
   imports: [CommonModule, FormsModule],
   template: `
     <!-- Mobile Top Bar Toggle -->
-    <div class="rb-sidebar-mobile-toggle d-flex align-center justify-between px-4 py-3">
-      <div class="d-flex align-center gap-2">
+    <div class="rb-sidebar-mobile-toggle flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
         <button class="menu-btn cursor-pointer bg-transparent border-none" (click)="toggleMobileOpen()">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -35,7 +35,7 @@ export interface SidebarItem {
     <!-- Main Sidebar Container -->
     <aside class="rb-sidebar" [class.rb-sidebar-mobile-open]="mobileOpen">
       <!-- Header Area -->
-      <div class="rb-sidebar-header d-flex align-center gap-3 border-b" *ngIf="logoText || logoSrc">
+      <div class="rb-sidebar-header flex items-center gap-3 border-b" *ngIf="logoText || logoSrc">
         <img *ngIf="logoSrc" [src]="logoSrc" alt="Logo" class="rb-sidebar-logo">
         <div class="rb-sidebar-brand-wrapper">
           <span class="rb-sidebar-brand font-extrabold text-main">{{ logoText }}</span>
@@ -61,15 +61,18 @@ export interface SidebarItem {
       </div>
 
       <!-- Navigation Menu Items -->
-      <nav class="rb-sidebar-nav py-3 d-flex flex-col gap-1">
+      <nav class="rb-sidebar-nav py-3 flex flex-col gap-1">
         <button 
           *ngFor="let item of filteredItems" 
           (click)="onItemClick(item)"
-          class="rb-sidebar-item-btn d-flex align-center justify-between"
+          class="rb-sidebar-item-btn flex items-center justify-between"
           [class.active]="activeId === item.id">
           
-          <div class="d-flex align-center gap-3">
-            <span *ngIf="item.icon" class="rb-sidebar-item-icon">{{ item.icon }}</span>
+          <div class="flex items-center gap-3">
+            <span *ngIf="item.icon" class="rb-sidebar-item-icon">
+              <i *ngIf="isFontAwesome(item.icon); else textIcon" [class]="item.icon"></i>
+              <ng-template #textIcon>{{ item.icon }}</ng-template>
+            </span>
             <span class="rb-sidebar-item-label">{{ item.label }}</span>
           </div>
 
@@ -146,5 +149,9 @@ export class SidebarComponent {
   clearSearch() {
     this.searchText = '';
     this.onSearchChange('');
+  }
+
+  isFontAwesome(icon: string): boolean {
+    return icon.includes('fa-');
   }
 }

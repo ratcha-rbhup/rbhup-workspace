@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-input-wrapper flex-col d-flex gap-1">
+    <div class="rb-input-wrapper flex-col flex gap-1">
       <label *ngIf="label" [for]="id" class="rb-input-label text-xs font-semibold text-muted select-none">
         {{ label }}
       </label>
       
-      <div class="rb-input-container pos-relative">
+      <div class="rb-input-container relative">
         <input
           [id]="id"
           [type]="type"

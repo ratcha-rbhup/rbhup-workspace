@@ -134,3 +134,58 @@
     }
   }
 }
+
+// 4. Responsive Mobile Media Queries
+@media (max-width: 640px) {
+  .rb-timeline.rb-timeline-alternate {
+    .rb-timeline-item {
+      width: 100% !important;
+      margin-left: 0 !important;
+
+      .rb-timeline-item-tail {
+        left: 6px !important;
+        right: auto !important;
+      }
+
+      .rb-timeline-item-head {
+        left: 0 !important;
+        right: auto !important;
+        
+        &.rb-timeline-item-head-custom {
+          left: -5px !important;
+          right: auto !important;
+        }
+      }
+
+      .rb-timeline-item-content {
+        margin-right: 0 !important;
+        margin-left: 26px !important;
+        text-align: left !important;
+      }
+
+      &.rb-timeline-item-right {
+        margin-left: 0 !important;
+
+        .rb-timeline-item-tail {
+          left: 6px !important;
+          right: auto !important;
+        }
+
+        .rb-timeline-item-head {
+          left: 0 !important;
+          right: auto !important;
+
+          &.rb-timeline-item-head-custom {
+            left: -5px !important;
+            right: auto !important;
+          }
+        }
+
+        .rb-timeline-item-content {
+          margin-left: 26px !important;
+          text-align: left !important;
+        }
+      }
+    }
+  }
+}

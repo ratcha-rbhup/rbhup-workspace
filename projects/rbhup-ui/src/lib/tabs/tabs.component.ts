@@ -9,13 +9,17 @@ export interface TabItem { id: string; label: string; icon?: string; }
   imports: [CommonModule],
   template: `
     <div class="rb-tabs">
-      <div class="rb-tabs-nav d-flex border-b overflow-x-auto">
+      <div class="rb-tabs-nav flex border-b overflow-x-auto">
         <button
           *ngFor="let tab of tabs"
           (click)="select(tab)"
-          class="rb-tab-btn px-4 py-2 text-sm font-semibold cursor-pointer border-none bg-transparent transition-fast select-none"
+          class="rb-tab-btn px-4 py-2 text-sm font-semibold cursor-pointer border-none bg-transparent transition-fast select-none flex items-center gap-1.5"
           [class.active]="activeTab === tab.id">
-          <span *ngIf="tab.icon">{{ tab.icon }}&nbsp;</span>{{ tab.label }}
+          <span *ngIf="tab.icon">
+            <i *ngIf="isFontAwesome(tab.icon); else textIcon" [class]="tab.icon"></i>
+            <ng-template #textIcon>{{ tab.icon }}</ng-template>
+          </span>
+          <span>{{ tab.label }}</span>
         </button>
       </div>
       <div class="rb-tabs-content pt-4 animate-fade-in">
@@ -33,5 +37,9 @@ export class TabsComponent {
   select(tab: TabItem) {
     this.activeTab = tab.id;
     this.activeTabChange.emit(tab.id);
+  }
+
+  isFontAwesome(icon: string): boolean {
+    return icon.includes('fa-');
   }
 }

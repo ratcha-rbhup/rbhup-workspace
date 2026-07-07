@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-progress-wrapper d-flex flex-col gap-1">
-      <div *ngIf="label" class="d-flex justify-between align-center mb-1">
+    <div class="rb-progress-wrapper flex flex-col gap-1">
+      <div *ngIf="label" class="flex justify-between items-center mb-1">
         <span class="text-xs font-semibold text-muted">{{ label }}</span>
         <span class="text-xs font-bold text-primary">{{ value }}%</span>
       </div>

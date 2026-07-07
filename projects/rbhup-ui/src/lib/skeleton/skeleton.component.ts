@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-skeleton-wrapper d-flex flex-col gap-2">
+    <div class="rb-skeleton-wrapper flex flex-col gap-2">
       <div *ngFor="let row of rows"
         class="rb-skeleton"
         [style.width]="row.width || '100%'"

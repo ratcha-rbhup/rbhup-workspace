@@ -8,10 +8,10 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="rb-calendar card shadow-sm border">
       <!-- Navigation Header -->
-      <div class="rb-cal-header d-flex align-center justify-between px-4 py-3 border-b">
-        <button (click)="prevMonth()" class="rb-cal-nav border-none bg-transparent cursor-pointer text-muted rounded-sm p-1 transition-fast">◀</button>
+      <div class="rb-cal-header flex items-center justify-between px-4 py-3 border-b">
+        <button (click)="prevMonth()" class="rb-cal-nav border-none bg-transparent cursor-pointer text-muted rounded-sm p-1 transition-fast"><i class="fa-solid fa-chevron-left"></i></button>
         <span class="text-sm font-bold text-main">{{ monthNames[currentMonth] }} {{ currentYear }}</span>
-        <button (click)="nextMonth()" class="rb-cal-nav border-none bg-transparent cursor-pointer text-muted rounded-sm p-1 transition-fast">▶</button>
+        <button (click)="nextMonth()" class="rb-cal-nav border-none bg-transparent cursor-pointer text-muted rounded-sm p-1 transition-fast"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
 
       <!-- Day Names -->
@@ -33,8 +33,8 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <!-- Selected Date Footer -->
-      <div *ngIf="selectedDate" class="rb-cal-footer px-4 py-2 border-t text-xs text-muted text-center">
-        ✓ Selected: <strong class="text-primary">{{ selectedDate | date:'d MMMM yyyy' }}</strong>
+      <div *ngIf="selectedDate" class="rb-cal-footer px-4 py-2 border-t text-xs text-muted text-center flex items-center justify-center gap-1.5">
+        <i class="fa-solid fa-circle-check text-success"></i> Selected: <strong class="text-primary">{{ selectedDate | date:'d MMMM yyyy' }}</strong>
       </div>
     </div>
   `,

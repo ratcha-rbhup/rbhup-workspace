@@ -8,12 +8,12 @@ export interface RadioOption { value: string; label: string; }
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="d-flex flex-col gap-1">
+    <div class="flex flex-col gap-1">
       <span *ngIf="label" class="text-xs font-semibold text-muted mb-1 select-none">{{ label }}</span>
       <label *ngFor="let opt of options"
-        class="rb-radio d-inline-flex align-center gap-2 cursor-pointer select-none"
+        class="rb-radio inline-flex items-center gap-2 cursor-pointer select-none"
         [class.disabled]="disabled">
-        <div class="rb-radio-circle d-flex align-center justify-center rounded-full transition-fast"
+        <div class="rb-radio-circle flex items-center justify-center rounded-full transition-fast"
           [class.selected]="value === opt.value"
           (click)="!disabled && select(opt.value)">
           <div *ngIf="value === opt.value" class="rb-radio-dot rounded-full"></div>

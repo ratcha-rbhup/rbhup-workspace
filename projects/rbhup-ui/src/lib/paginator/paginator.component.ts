@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="rb-paginator d-flex align-center justify-between px-4 py-3 border-t text-sm text-muted">
+    <div class="rb-paginator flex items-center justify-between px-4 py-3 border-t text-sm text-muted">
       <!-- Info label -->
       <div>
         Showing <span class="font-semibold text-main">{{ (page - 1) * pageSize + 1 }}</span> to 
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <!-- Controls -->
-      <div class="d-flex align-center gap-1">
+      <div class="flex items-center gap-1">
         <button (click)="goToPage(1)" [disabled]="page === 1" class="rb-page-btn border rounded-sm px-2 py-1 bg-transparent cursor-pointer font-bold select-none">«</button>
         <button (click)="goToPage(page - 1)" [disabled]="page === 1" class="rb-page-btn border rounded-sm px-2 py-1 bg-transparent cursor-pointer font-bold select-none">‹</button>
         
